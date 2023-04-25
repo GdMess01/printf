@@ -22,9 +22,15 @@ int print_from_to(char *start, char *stop, char *except)
 }
 
 /**
+<<<<<<< HEAD
  * print_rev - prints string in reverse
  * @ap: string
  * @params: the parameters struct
+=======
+ * print_rev- prints string in reverse
+ * @ap: string
+ * @params: the parameter struct
+>>>>>>> origin/master
  *
  * Return: number bytes printed
  */
@@ -39,7 +45,11 @@ int print_rev(va_list ap, params_t *params)
 		for (len = 0; *str; str++)
 			len++;
 		str--;
+<<<<<<< HEAD
 		for (; len > 0; len--; str--)
+=======
+		for (; len > 0; len--, str--)
+>>>>>>> origin/master
 			sum += _putchar(*str);
 	}
 	return (sum);
@@ -48,15 +58,28 @@ int print_rev(va_list ap, params_t *params)
 /**
  * print_rot13 - prints string in rot13
  * @ap: string
+<<<<<<< HEAD
  * @params: the parameters struct
  *
  * Return: number bytes printed
  */
+=======
+ * @params: the parameter struct
+ *
+ * Return: number bytes printed
+ */
+
+>>>>>>> origin/master
 int print_rot13(va_list ap, params_t *params)
 {
 	int i, index;
 	int count = 0;
+<<<<<<< HEAD
 	char arr[] = "NOPQRSTUVWXYZABCDEFGHIJKLM     nopqrstuvwxyzabcdefghijklm";
+=======
+	char arr[] =
+		"NOPQRSTUVWXYZABCDEFGHIJKLM       nopqrstuvwxyzabcdefghijklm";
+>>>>>>> origin/master
 	char *a = va_arg(ap, char *);
 	(void)params;
 

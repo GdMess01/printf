@@ -6,7 +6,12 @@
  *
  * Return: the number of bytes printed
  */
+<<<<<<< HEAD
 int (*get_specifier(char *s)) (va_list ap, params_t *params)
+=======
+
+int (*get_specifier(char *s))(va_list ap, params_t *params)
+>>>>>>> origin/master
 {
 	specifier_t specifiers[] = {
 		{"c", print_char},
@@ -20,7 +25,11 @@ int (*get_specifier(char *s)) (va_list ap, params_t *params)
 		{"x", print_hex},
 		{"X", print_HEX},
 		{"p", print_address},
+<<<<<<< HEAD
 		{"s", print_S},
+=======
+		{"S", print_S},
+>>>>>>> origin/master
 		{"r", print_rev},
 		{"R", print_rot13},
 		{NULL, NULL}
@@ -41,14 +50,25 @@ int (*get_specifier(char *s)) (va_list ap, params_t *params)
 /**
  * get_print_func - finds the format func
  * @s: the format string
+<<<<<<< HEAD
  * @ap: arguemnetpointer
+=======
+ * @ap: argument pointer
+>>>>>>> origin/master
  * @params: the parameters struct
  *
  * Return: the number of bytes printed
  */
+<<<<<<< HEAD
 int get_print_func(char *s, va_list ap, params_t *params)
 {
 	int (*f) (va_list, params_t *) = get_specifier(s);
+=======
+
+int get_print_func(char *s, va_list ap, params_t *params)
+{
+	int (*f)(va_list, params_t *) = get_specifier(s);
+>>>>>>> origin/master
 
 	if (f)
 		return (f(ap, params));
@@ -62,13 +82,18 @@ int get_print_func(char *s, va_list ap, params_t *params)
  *
  * Return: if flag was valid
  */
+<<<<<<< HEAD
 int get_flag (char *s, params_t *params)
+=======
+int get_flag(char *s, params_t *params)
+>>>>>>> origin/master
 {
 	int i = 0;
 
 	switch (*s)
 	{
 		case '+':
+<<<<<<< HEAD
 		    i = params->plus_flag = 1;
 		    break;
 	        case ' ':
@@ -85,6 +110,24 @@ int get_flag (char *s, params_t *params)
 		    break;
 	}
         return (i);
+=======
+			i = params->plus_flag = 1;
+			break;
+		case ' ':
+			i = params->space_flag = 1;
+			break;
+		case '#':
+			i = params->hashtag_flag = 1;
+			break;
+		case '-':
+			i = params->minus_flag = 1;
+			break;
+		case '0':
+			i = params->zero_flag = 1;
+			break;
+	}
+	return (i);
+>>>>>>> origin/master
 }
 
 /**
@@ -97,6 +140,7 @@ int get_flag (char *s, params_t *params)
 int get_modifier(char *s, params_t *params)
 {
 	int i = 0;
+<<<<<<< HEAD
 	switch (*s)
 	{
 	case 'h':
@@ -105,6 +149,17 @@ int get_modifier(char *s, params_t *params)
 	case 'l':
 		i = params->l_modifier = 1;
 		break;
+=======
+
+	switch (*s)
+	{
+		case 'h':
+			i = params->h_modifier = 1;
+			break;
+		case 'l':
+			i = params->l_modifier = 1;
+			break;
+>>>>>>> origin/master
 	}
 	return (i);
 }
@@ -120,7 +175,11 @@ int get_modifier(char *s, params_t *params)
 char *get_width(char *s, params_t *params, va_list ap)
 {
 	int d = 0;
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> origin/master
 	if (*s == '*')
 	{
 		d = va_arg(ap, int);
