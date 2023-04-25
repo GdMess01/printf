@@ -30,7 +30,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 
 	while (specifiers[i].specifier)
 	{
-		if (*S == specifiers[i].specifier[0])
+		if (*s == specifiers[i].specifier[0])
 		{
 			return (specifiers[i].f);
 		}
@@ -106,7 +106,7 @@ int get_modifier(char *s, params_t *params)
 			i = params->h_modifier = 1;
 			break;
 		case 'l':
-			i= params->l_modifier = 1;
+			i = params->l_modifier = 1;
 			break;
 	}
 	return (i);
@@ -137,28 +137,3 @@ char *get_width(char *s, params_t *params, va_list ap)
 	params->width = d;
 	return (s);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

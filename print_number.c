@@ -31,7 +31,7 @@ int _strlen(char *s)
  * @str: the base number as a string
  * @params: the parameter struct
  *
- * Return: chars printed 
+ * Return: chars printed
  */
 int print_number(char *str, params_t *params)
 {
@@ -45,7 +45,7 @@ int print_number(char *str, params_t *params)
 		str++;
 		i--;
 	}
-	if (params->preciion != UINT_MAX)
+	if (params->precision != UINT_MAX)
 		while (i++ < params->precision)
 			*--str = '0';
 	if (neg)
@@ -58,7 +58,7 @@ int print_number(char *str, params_t *params)
 
 /**
  * print_number_right_shift - prints a number a number with options
- * @srt: the base number as a string
+ * @str: the base number as a string
  * @params: the parameter struct
  *
  * Return: chars printed
@@ -75,13 +75,13 @@ int print_number_right_shift(char *str, params_t *params)
 		str++;
 	else
 		neg = 0;
-	if ((params->plus_flag && !neg2) || 
+	if ((params->plus_flag && !neg2) ||
 			(!params->plus_flag && params->space_flag && !neg2))
 		i++;
 	if (neg && pad_char == '0')
 		n += _putchar('-');
 	if (params->plus_flag && !neg2 && pad_char == '0' && !params->unsign)
-		p += _putchar('+');
+		n += _putchar('+');
 	else if (!params->plus_flag && params->space_flag && !neg2 &&
 			!params->unsign && params->zero_flag)
 		n += _putchar(' ');
@@ -116,23 +116,3 @@ int print_number_left_shift(char *str, params_t *params)
 		n += _putchar(pad_char);
 	return (n);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

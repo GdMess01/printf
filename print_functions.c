@@ -14,7 +14,7 @@ int print_char(va_list ap, params_t *params)
 
 	if (params->minus_flag)
 		sum += _putchar(ch);
-	while(pad++ < params->width)
+	while (pad++ < params->width)
 		sum += _putchar(pad_char);
 	if (!params->minus_flag)
 		sum += _putchar(ch);
@@ -44,14 +44,14 @@ int print_int(va_list ap, params_t *params)
 /**
  * print_string - prints string
  * @ap: argument pointer
- * @param: the parameters struct
+ * @params: the parameters struct
  *
  * Return: number char printed
  */
 int print_string(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *), pad_char = ' ';
-	unsigned int pad = 0, sum = 0; i = 0, j;
+	unsigned int pad = 0, sum = 0, i = 0, j;
 
 	(void)params;
 	switch ((int)(!str))
@@ -73,7 +73,7 @@ int print_string(va_list ap, params_t *params)
 		sum += _putchar(pad_char);
 	if (!params->minus_flag)
 	{
-		if(params->precision != UINT_MAX)
+		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
 				sum += _putchar(*str++);
 		else
@@ -85,7 +85,7 @@ int print_string(va_list ap, params_t *params)
 /**
  * print_percent - prints string
  * @ap: argument pointer
- * @param: the parameters struct
+ * @params: the parameters struct
  *
  * Return: number char printed
  */
@@ -99,7 +99,7 @@ int print_percent(va_list ap, params_t *params)
 /**
  * print_S - custom format specifier
  * @ap: argument pointer
- * @param: the parameters struct
+ * @params: the parameters struct
  *
  * Return: number char printed
  */
@@ -129,28 +129,3 @@ int print_S(va_list ap, params_t *params)
 	}
 	return (sum);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

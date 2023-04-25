@@ -59,7 +59,7 @@ int print_unsigned(va_list ap, params_t *params)
 }
 
 /**
- * print_adress - prints adress
+ * print_address - prints adress
  * @ap: argument pointer
  * @params: the parameters struct
  *
@@ -78,14 +78,3 @@ int print_address(va_list ap, params_t *params)
 	*--str = '0';
 	return (print_number(str, params));
 }
-
-
-
-
-
-
-
-
-
-
-
